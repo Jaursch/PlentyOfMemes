@@ -22,7 +22,7 @@
 // change the value of $dbuser and $dbpass to your username and password
 	include 'connectvars.php';
 
-	$conn = mysqli_connect(DB_HOST, cs340_jaurschb, 9234, DB_NAME);
+	$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	if (!$conn) {
 		die('Could not connect: ' . mysql_error());
 	}
