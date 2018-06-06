@@ -33,7 +33,7 @@
 		$password = mysqli_real_escape_string($conn, $_POST['password']);
 
 // See if username and password are in the system
-		$queryIn = "SELECT * FROM Users where username='$username' AND password=MD5('$password')";
+		$queryIn = "SELECT Username FROM User where Username='$username' AND Password = MD5('$password')";
 		$resultIn = mysqli_query($conn, $queryIn);
 		if($row = mysqli_fetch_assoc($resultIn)){
 			$msg = "<h2>You're Logged In $username!</h2>";

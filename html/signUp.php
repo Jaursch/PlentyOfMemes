@@ -29,14 +29,11 @@
 
 // Escape user inputs for security
 		$username = mysqli_real_escape_string($conn, $_POST['username']);
-		$firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
-		$lastName = mysqli_real_escape_string($conn, $_POST['lastName']);
 		$email = mysqli_real_escape_string($conn, $_POST['email']);
 		$password = mysqli_real_escape_string($conn, $_POST['password']);
-		$age = mysqli_real_escape_string($conn, $_POST['age']);
 
 // See if username is already in the table
-		$queryIn = "SELECT * FROM Users where username='$username' ";
+		$queryIn = "SELECT * FROM User where Username='$username' ";
 		$resultIn = mysqli_query($conn, $queryIn);
 		if (mysqli_num_rows($resultIn)> 0) {
 			$msg ="<h2>Can't Add to Table</h2> There is already a username registered under $username<p>";
@@ -46,7 +43,7 @@
 		//$salt = base64_encode(mcrypt_create_iv(12 , MCRYPT_DEV_URANDOM));
 
 		// attempt insert query
-			$query = "INSERT INTO Users (username, firstName, lastName, email, password, age) VALUES ('$username', '$firstName', '$lastName', '$email', MD5('$password'), '$age')";
+			$query = "INSERT INTO User (Username, Email, Password) VALUES ('$username', '$email', MD5('$password'))";
 			if(mysqli_query($conn, $query)){
 				$msg =  "Record added successfully.<p>";
 			} else{
@@ -68,15 +65,7 @@ mysqli_close($conn);
         <label for="User">Username:</label>
         <input type="text" class="required" name="username" id="username">
 		</p>
-    <p>
-        <label for="First">First Name:</label>
-        <input type="text" class="required" name="first name" id="firstName">
-		</p>
-		<p>
-				<label for="Last">Last Name:</label>
-				<input type="text" class="required" name="last name" id="lastName">
-		</p>
-		<p>
+  	<p>
         <label for="Email">Email:</label>
         <input type="text" class="required" name="email" id="email">
 		</p>
@@ -88,11 +77,6 @@ mysqli_close($conn);
         <label for="VerifyPassword">Re-Enter Password:</label>
         <input type="text" class="required" name="verify password" id="password2">
 		</p>
-		<p>
-        <label for="age">Age:</label>
-        <input type="number" min=1 max = 169 class="optional" name="age" id="age" title="age should be numeric">
-				<!-- do something w/ class optional? -->
-	  </p>
 </fieldset>
 
       <p>
