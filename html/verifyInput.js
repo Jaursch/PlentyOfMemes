@@ -4,9 +4,9 @@
 var pswd;
 
 function checksid(){
-    
+
 	sid = document.getElementById('sid');
-	
+
 	var  re = /[0-9]/;
     if( ! re.test(sid.value)) {
 		alert("Password must contain at least one digit");
@@ -16,7 +16,7 @@ function checksid(){
     if( ! re.test(pswd1.value)) {
 		alert("Password must contain at least one uppercase letter");
 		return false;
-    }	
+    }
 	re = /[a-z]/;
     if( ! re.test(pswd1.value)) {
 		alert("Password must contain at least one lowercase letter");
@@ -25,7 +25,7 @@ function checksid(){
 	if( pswd1.value.length < 6) {
 		alert("Password must have at least 6 characters");
 		return false;
-    }	
+    }
 	if (pswd1.value == pswd2.value) {
 		alert("Good Passwords");
 		return true;
@@ -33,7 +33,7 @@ function checksid(){
 		alert("Passwords don't match");
 		return false;
 	}
-	
+
 }
 
 function isBlank(inputField){
@@ -52,20 +52,20 @@ function isBlank(inputField){
 function makeRed(inputDiv){
    	inputDiv.style.backgroundColor="#AA0000";
 	//inputDiv.parentNode.style.backgroundColor="#AA0000";
-	inputDiv.parentNode.style.color="#FFFFFF";		
+	inputDiv.parentNode.style.color="#FFFFFF";
 }
 
 //remove all error styles from the div passed in
 function makeClean(inputDiv){
 	inputDiv.parentNode.style.backgroundColor="#FFFFFF";
-	inputDiv.parentNode.style.color="#000000";		
+	inputDiv.parentNode.style.color="#000000";
 }
 
 //the main function must occur after the page is loaded, hence being inside the wondow.onload event handler.
 window.onload = function(){
     var myForm = document.getElementById("addForm");
 
-    //all inputs with the class required are looped through 
+    //all inputs with the class required are looped through
     var requiredInputs = document.querySelectorAll(".required");
     for (var i=0; i < requiredInputs.length; i++){
 		requiredInputs[i].onfocus = function(){
@@ -83,8 +83,8 @@ window.onload = function(){
 			}
 			else{
 				makeClean(requiredInputs[i]);
-			} 
+			}
 		}
-		
-	}   
+
+	}
 }
