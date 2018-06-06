@@ -23,7 +23,7 @@
 	}
 
 // query to select all information from supplier table
-	$query = "SELECT username, firstName, lastName, email, password, age FROM Users ";
+	$query = "SELECT Username, Email, Password FROM User ";
 
 
 // Get results from query
