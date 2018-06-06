@@ -7,21 +7,7 @@ function checkPswds(){
 
 	pswd1 = document.getElementById('password1');
 	pswd2 = document.getElementById('password2');
-	var  re = /[0-9]/;
-    if( ! re.test(pswd1.value)) {
-		alert("Password must contain at least one digit");
-		return false;
-    }
-	re = /[A-Z]/;
-    if( ! re.test(pswd1.value)) {
-		alert("Password must contain at least one uppercase letter");
-		return false;
-    }
-	re = /[a-z]/;
-    if( ! re.test(pswd1.value)) {
-		alert("Password must contain at least one lowercase letter");
-		return false;
-    }
+
 	if( pswd1.value.length < 6) {
 		alert("Password must have at least 6 characters");
 		return false;
@@ -69,9 +55,9 @@ window.onload = function(){
     //all inputs with the class required are looped through
     var requiredInputs = document.querySelectorAll(".required");
     for (var i=0; i < requiredInputs.length; i++){
-		requiredInputs[i].onfocus = function(){
+/*/		requiredInputs[i].onfocus = function(){
 			this.style.backgroundColor = "#EEEE00";
-		}
+		}/*/
     }
 
     //on submitting the form, "empty" checks are performed on required inputs.
