@@ -3,6 +3,7 @@
 	$content = array(
 		"Sign Up" => "signUp.php",
 		"Login" => "login.php",
-		"List Users" => "listUsers.php");
+		"List Users" => "listUsers.php",
+		"Home" => "home.php");
 
 ?>
