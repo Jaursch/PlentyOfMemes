@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<title>Sign Up</title>
-		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="spectre.min.css">
 		<script type = "text/javascript"  src = "formVerify.js" > </script>
 	</head>
 <body>

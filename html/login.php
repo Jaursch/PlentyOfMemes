@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<title>Add Supplier</title>
-		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="spectre.min.css">
 		<!-- don't need js? -->
 		<script type = "text/javascript"  src = "formVerify.js" > </script>
 	</head>

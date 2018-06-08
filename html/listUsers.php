@@ -7,7 +7,7 @@
 <html>
 	<head>
 		<title>List Parts</title>
-		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="spectre.min.css">
 	</head>
 <body>
 
