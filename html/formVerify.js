@@ -46,7 +46,7 @@ window.onload = function(){
     var myForm = document.getElementById("signUpForm");
 
     //all inputs with the class required are looped through
-    var requiredInputs = document.querySelectorAll(".form-input");
+    var requiredInputs = document.querySelectorAll("signUpForm");
     /*
     for (var i=0; i < requiredInputs.length; i++){
 		requiredInputs[i].onfocus = function(){
@@ -57,9 +57,11 @@ window.onload = function(){
     myForm.onsubmit = function(e){
 		var requiredInputs = document.querySelectorAll(".form-input");
 		for (var i=0; i < requiredInputs.length; i++){
+			console.log(requiredInputs[i]);
 			if( isBlank(requiredInputs[i]) ){
 				e.preventDefault();
 				alert("You left " + requiredInputs[i].getAttribute("name") + " empty");
+				break;
 			}
 			else{
 				makeClean(requiredInputs[i]);

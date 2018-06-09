@@ -11,12 +11,6 @@
 				}
 			?>
 		
-			<li class="tab-item tab-action" style='position:absolute;right:1%'>
-				<div class="input-group input-inline">
-					<input class="form-input input-sm" type="text" placeholder="This doesn't do anything yet">
-					<button class="btn btn-primary btn-sm input-group-btn">Search</button>
-				</div>
-			</li>
 		
 		</ul>
 
