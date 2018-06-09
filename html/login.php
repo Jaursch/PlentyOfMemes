@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
 <!-- Add Supplier Info to Table Supplier -->
 <?php
+		session_start();
 		$currentpage="Login";
 		include "pages.php";
 
 ?>
 <html>
 	<head>
-		<title>Add Supplier</title>
+		<title>Login to memeME</title>
 		<link rel="stylesheet" href="spectre.min.css">
 		<!-- don't need js? -->
 		<script type = "text/javascript"  src = "formVerify.js" > </script>
@@ -17,7 +18,9 @@
 
 <?php
 	include "header.php";
-	$msg = "Login with your account information: ";
+	$user = $_SESSION["user"];
+	if(!$_SESSION["user"] or $_SESSION["user"] == "username")
+		$msg = "Login with your account information: ";
 
 // change the value of $dbuser and $dbpass to your username and password
 	include 'connectvars.php';
@@ -36,10 +39,13 @@
 		$queryIn = "SELECT Username FROM User where Username='$username' AND Password = MD5('$password')";
 		$resultIn = mysqli_query($conn, $queryIn);
 		if($row = mysqli_fetch_assoc($resultIn)){
-			$msg = "<h2>You're Logged In $username!</h2>";
+			$msg = "<h2>Welcome $username! Log into another account?: </h2>";
+			$_SESSION["user"] = "$username";
+			print_r($_SESSION);
 		}
 		else{
 			$msg = "<h2>Error</h2> Username and password combination not found";
+			//$_SESSION["user"] = "not logged in";
 		}
 
 		//if (mysqli_num_rows($resultIn)> 0) {
