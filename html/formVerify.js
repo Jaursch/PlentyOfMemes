@@ -60,6 +60,7 @@ window.onload = function(){
 			console.log(requiredInputs[i]);
 			if( isBlank(requiredInputs[i]) ){
 				e.preventDefault();
+				alert("You left " + requiredInputs[i].getAttribute("name") + " empty");
 			}
 			else{
 				makeClean(requiredInputs[i]);
