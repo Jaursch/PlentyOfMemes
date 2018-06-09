@@ -1,13 +1,15 @@
-
-
+<?php  ?>
 	<header>
-		<h1>MemeMe - <em>Welcome<span id="username"><?php echo " $user";?></span>!</em></h1>
+		<h1>MemeMe - <em>Welcome<?php
+			if(isset($_SESSION["user"]))
+				echo " " . $_SESSION["user"]
+		?>!</em></h1>
 	</header>
 	<nav>
 		<ul class="tab tab-block" style='position:sticky'>
 			<?php
 				foreach ($content as $page => $location){
-					echo "<li class='tab-item' style='max-width:5%'><a href='$location?user=".$user."' ".($page==$currentpage?" class='active'":"").">".$page."</a></li>";
+					echo "<li class='tab-item' style='max-width:5%'><a href='$location?user="./*/$user./*/"' ".($page==$currentpage?" class='active'":"").">".$page."</a></li>";
 				}
 			?>
 
@@ -17,7 +19,17 @@
 					<button class="btn btn-primary btn-sm input-group-btn">Search</button>
 				</div>
 			</li>
-			<input type=button onclick="location.href='logout.php'; " value="Logout" />
+			<div>
+			<?php
+				/*/if(!$_SESSION["user"]){ //not currently getting the correct value
+					echo "<p>You are not currently logged in</p>";
+				}else{/*/
+					//echo "<input type=button onclick='location.href='logout.php';' value='Logout' />";
+				/*/}/*/
+			?>
+			<input type=button onclick="location.href='logout.php';" value='Logout' />
+
+		</div>
 
 		</ul>
 

@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <!-- addParts is now signUp -->
 <?php
+		include "sessionheader.php";
 		$currentpage="Sign Up";
 		include "pages.php";
 

@@ -1,5 +1,6 @@
 <?php
-  session_start();
+  include "sessionheader.php";
+  session_unset();
   session_destroy();
   header('Location: login.php');
   exit;

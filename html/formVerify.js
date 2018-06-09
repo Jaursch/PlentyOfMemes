@@ -75,5 +75,6 @@ window.onload = function(){
 		if ( !checkPswds() ) {
 			e.preventDefault();
 		}
+		window.location.reload();
 	}
 }
