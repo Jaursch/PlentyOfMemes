@@ -2,7 +2,7 @@
 		include 'sessionheader.php';
 ?>
 ﻿<!DOCTYPE html>
-<!-- Add Supplier Info to Table Supplier -->
+<!-- Login Page -->
 <?php
 	$currentpage="Login";
 	include "pages.php";
@@ -78,16 +78,16 @@ mysqli_close($conn);
 	<legend>Login Info:</legend>
     <p>
         <label for="Username">Username:</label>
-        <input type="text" class="required" name="username" id="username">
+        <input type="text" class="form-input" name="username" id="username">
     </p>
 
     <p>
         <label for="Password">Password:</label>
-        <input type="text" class="required" name="password" id="password">
+        <input type="text" class="form-input" name="password" id="password">
 </fieldset>
 
       <p>
-        <input type = "submit"  value = "Submit" />
+        <input type = "submit"  value = "Submit" class = "btn"/>
     <!--    <input type = "reset"  value = "Clear Form" />  -->
       </p>
 </form>

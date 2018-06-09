@@ -1,6 +1,6 @@
 <?php  ?>
 	<header>
-		<h1>MemeMe - <em>Welcome<?php
+		<h1 style="color:#5755d9;">MemeMe - <em>Welcome<?php
 			if(isset($_SESSION["user"]))
 				echo " " . $_SESSION["user"]
 		?>!</em></h1>
@@ -30,7 +30,6 @@
 			<input type=button onclick="location.href='logout.php';" value='Logout' />
 
 		</div>
-
 		</ul>
 
 	</nav>
