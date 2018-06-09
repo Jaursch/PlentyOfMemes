@@ -34,13 +34,6 @@ function isBlank(inputField){
     return false;
 }
 
-//function to highlight an error through colour by adding css attributes tot he div passed in
-function makeRed(inputDiv){
-   	inputDiv.style.backgroundColor="#AA0000";
-	//inputDiv.parentNode.style.backgroundColor="#AA0000";
-	inputDiv.parentNode.style.color="#FFFFFF";
-  alert("You left " + inputDiv.getAttribute("name") + " empty");
-}
 
 //remove all error styles from the div passed in
 function makeClean(inputDiv){
@@ -53,17 +46,18 @@ window.onload = function(){
     var myForm = document.getElementById("signUpForm");
 
     //all inputs with the class required are looped through
-    var requiredInputs = document.querySelectorAll(".required");
+    var requiredInputs = document.querySelectorAll(".form-input");
+    /*
     for (var i=0; i < requiredInputs.length; i++){
-/*/		requiredInputs[i].onfocus = function(){
-			this.style.backgroundColor = "#EEEE00";
-		}/*/
+		requiredInputs[i].onfocus = function(){
+			this.style.backgroundColor = "#EEEE00";	
     }
-
+*/
     //on submitting the form, "empty" checks are performed on required inputs.
     myForm.onsubmit = function(e){
-		var requiredInputs = document.querySelectorAll(".required");
+		var requiredInputs = document.querySelectorAll(".form-input");
 		for (var i=0; i < requiredInputs.length; i++){
+			console.log(requiredInputs[i]);
 			if( isBlank(requiredInputs[i]) ){
 				e.preventDefault();
 				makeRed(requiredInputs[i]);
