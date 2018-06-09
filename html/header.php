@@ -1,7 +1,7 @@
 
 
 	<header>
-		<h1>MemeMe - <em>Welcome<span id="username"><?php echo " $user";?></span>!</em></h1>
+		<h1 style="color:#5755d9;">MemeMe - <em>Welcome<span id="username"><?php echo " $user";?></span>!</em></h1>
 	</header>
 	<nav>
 		<ul class="tab tab-block" style='position:sticky'>
