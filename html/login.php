@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<!-- Add Supplier Info to Table Supplier -->
+<!-- Login Page -->
 <?php
 		$currentpage="Login";
 		include "pages.php";
@@ -7,7 +7,7 @@
 ?>
 <html>
 	<head>
-		<title>Add Supplier</title>
+		<title>MemeMe Login</title>
 		<link rel="stylesheet" href="spectre.min.css">
 		<!-- don't need js? -->
 		<script type = "text/javascript"  src = "formVerify.js" > </script>
