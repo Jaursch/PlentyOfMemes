@@ -5,7 +5,7 @@
 ?>
 <html>
 	<head>
-		<title>List Suppliers</title>
+		<title>MemeMe Home</title>
 		<link rel="stylesheet" href="spectre.min.css">
 	</head>
 	
