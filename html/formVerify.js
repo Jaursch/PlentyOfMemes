@@ -57,7 +57,6 @@ window.onload = function(){
     myForm.onsubmit = function(e){
 		var requiredInputs = document.querySelectorAll(".form-input");
 		for (var i=0; i < requiredInputs.length; i++){
-			console.log(requiredInputs[i]);
 			if( isBlank(requiredInputs[i]) ){
 				e.preventDefault();
 				alert("You left " + requiredInputs[i].getAttribute("name") + " empty");
