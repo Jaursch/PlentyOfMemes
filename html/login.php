@@ -62,21 +62,21 @@ mysqli_close($conn);
 	<section>
     <h2> <?php echo $msg; ?> </h2>
 
-<form method="post" id="addForm">
+<form method="post" id="signUpForm">
 <fieldset>
 	<legend>Login Info:</legend>
     <p>
         <label for="Username">Username:</label>
-        <input type="text" class="required" name="username" id="username">
+        <input type="text" class="form-input" name="username" id="username">
     </p>
 
     <p>
         <label for="Password">Password:</label>
-        <input type="text" class="required" name="password" id="password">
+        <input type="text" class="form-input" name="password" id="password">
 </fieldset>
 
       <p>
-        <input type = "submit"  value = "Submit" />
+        <input type = "submit"  value = "Submit" class = "btn"/>
     <!--    <input type = "reset"  value = "Clear Form" />  -->
       </p>
 </form>
