@@ -1,12 +1,12 @@
 <?php
 		include 'sessionheader.php';
-		$currentpage="Login";
-		include "pages.php";
 ?>
-
 ﻿<!DOCTYPE html>
 <!-- Add Supplier Info to Table Supplier -->
-
+<?php
+	$currentpage="Login";
+	include "pages.php";
+?>
 <html>
 	<head>
 		<title>MemeMe - Login</title>
