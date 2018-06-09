@@ -60,7 +60,6 @@ window.onload = function(){
 			console.log(requiredInputs[i]);
 			if( isBlank(requiredInputs[i]) ){
 				e.preventDefault();
-				makeRed(requiredInputs[i]);
 			}
 			else{
 				makeClean(requiredInputs[i]);
