@@ -42,7 +42,7 @@
 					if($row = mysqli_fetch_assoc($result)){
 						$url=$row["Image_URL"];
 						$caption=$row["Text"];
-						echo "<td><div style='max-width:25%'><img src='".$url."' alt='Cover' style='width:400%'></div><div>".$caption."</div></td>";
+						echo "<td style='max-width:25%'><div style='max-width:25%'><img src='".$url."' alt='Cover' style='width:400%'></div><div>".$caption."</div></td>";
 					}
 				}
 				echo "</tr>\n";
