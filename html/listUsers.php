@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+<?php
+	include 'sessionheader.php';
+ ?>
+<!DOCTYPE html>
 <!-- listParts now is listUsers -->
 <?php
 		$currentpage="List Parts";

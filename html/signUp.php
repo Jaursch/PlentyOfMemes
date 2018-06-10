@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <!-- addParts is now signUp -->
 <?php
+		include "sessionheader.php";
 		$currentpage="Sign Up";
 		include "pages.php";
 
@@ -26,7 +27,6 @@
 		die('Could not connect: ' . mysql_error());
 	}
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
 // Escape user inputs for security
 		$username = mysqli_real_escape_string($conn, $_POST['username']);
 		$email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -36,7 +36,7 @@
 		$queryIn = "SELECT * FROM User where Username='$username' ";
 		$resultIn = mysqli_query($conn, $queryIn);
 		if (mysqli_num_rows($resultIn)> 0) {
-			$msg ="<h2>Can't Add to Table</h2> There is already a username registered under $username<p>";
+			$msg ="<h2>Can't create account</h2> There is already a username registered under $username<p>";
 		} else {
 
 		//generate salt
@@ -45,7 +45,8 @@
 		// attempt insert query
 			$query = "INSERT INTO User (Username, Email, Password) VALUES ('$username', '$email', MD5('$password'))";
 			if(mysqli_query($conn, $query)){
-				$msg =  "Record added successfully.<p>";
+				$msg =  "Added successfully. Welcome $username!<p>";
+				$_SESSION["user"] = $username;
 			} else{
 				echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
 			}
@@ -56,6 +57,12 @@ mysqli_close($conn);
 
 ?>
 	<section>
+		<?php
+			if(isset($_SESSION["user"])){
+				$tempuser = $_SESSION["user"];
+				echo "<h2>Currently signed into '$tempuser'</h2>";
+			}
+		?>
     <h2> <?php echo $msg; ?> </h2>
 
 <form method="post" id="signUpForm">
@@ -63,25 +70,25 @@ mysqli_close($conn);
 	<legend>Input credentials:</legend>
     <p>
         <label for="User">Username:</label>
-        <input type="text" class="required" name="username" id="username">
+        <input type="text" class="form-input" name="username" id="username">
 		</p>
   	<p>
         <label for="Email">Email:</label>
-        <input type="text" class="required" name="email" id="email">
+        <input type="text" class="form-input" name="email" id="email">
 		</p>
 		<p>
         <label for="Password">Password:</label>
-        <input type="text" class="required" name="password" id="password1">
+        <input type="text" class="form-input" name="password" id="password1">
 		</p>
 		<p>
         <label for="VerifyPassword">Re-Enter Password:</label>
-        <input type="text" class="required" name="verify password" id="password2">
+        <input type="text" class="form-input" name="verify password" id="password2">
 		</p>
 </fieldset>
 
       <p>
-        <input type = "submit"  value = "Submit" />
-        <input type = "reset"  value = "Clear Form" />
+        <input type = "submit"  value = "Submit" class= "btn" />
+        <input type = "reset"  value = "Clear Form" class = "btn" />
       </p>
 </form>
 </body>

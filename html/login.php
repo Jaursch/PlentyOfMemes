@@ -1,13 +1,15 @@
-﻿<!DOCTYPE html>
-<!-- Add Supplier Info to Table Supplier -->
 <?php
-		$currentpage="Login";
-		include "pages.php";
-
+		include 'sessionheader.php';
+?>
+﻿<!DOCTYPE html>
+<!-- Login Page -->
+<?php
+	$currentpage="Login";
+	include "pages.php";
 ?>
 <html>
 	<head>
-		<title>Add Supplier</title>
+		<title>MemeMe - Login</title>
 		<link rel="stylesheet" href="spectre.min.css">
 		<!-- don't need js? -->
 		<script type = "text/javascript"  src = "formVerify.js" > </script>
@@ -16,8 +18,15 @@
 
 
 <?php
+//	$user = $_SESSION["user"];
 	include "header.php";
-	$msg = "Login with your account information: ";
+	if(!isset($_SESSION["user"]))
+		$msg = "Login with your account information: ";
+	else {
+		$tempname = $_SESSION["user"];
+		$msg = "Hey $tempname, login into another account?";
+	}
+
 
 // change the value of $dbuser and $dbpass to your username and password
 	include 'connectvars.php';
@@ -36,11 +45,14 @@
 		$queryIn = "SELECT Username FROM User where Username='$username' AND Password = MD5('$password')";
 		$resultIn = mysqli_query($conn, $queryIn);
 		if($row = mysqli_fetch_assoc($resultIn)){
-			$msg = "<h2>You're Logged In $username!</h2>";
+			$msg = "<h2> You're logged in $username! Log into another account?: </h2>";
+			$_SESSION["user"] = $username;
 		}
 		else{
-			$msg = "<h2>Error</h2> Username and password combination not found";
+			$msg = "<h2>Error</h2> Username and password combination not found.";
+			//$_SESSION["user"] = "not logged in";
 		}
+
 
 		//if (mysqli_num_rows($resultIn)> 0) {
 		//	$msg ="<h2>Can't Add to Table</h2> There is already a supplier with sid $sid<p>";
@@ -58,25 +70,24 @@
 // close connection
 mysqli_close($conn);
 
+	echo "<section>";
+  echo  "<h2>  $msg </h2>";
 ?>
-	<section>
-    <h2> <?php echo $msg; ?> </h2>
-
-<form method="post" id="addForm">
+<form method="post" id="signUpForm">
 <fieldset>
 	<legend>Login Info:</legend>
     <p>
         <label for="Username">Username:</label>
-        <input type="text" class="required" name="username" id="username">
+        <input type="text" class="form-input" name="username" id="username">
     </p>
 
     <p>
         <label for="Password">Password:</label>
-        <input type="text" class="required" name="password" id="password">
+        <input type="text" class="form-input" name="password" id="password">
 </fieldset>
 
       <p>
-        <input type = "submit"  value = "Submit" />
+        <input type = "submit"  value = "Submit" class = "btn"/>
     <!--    <input type = "reset"  value = "Clear Form" />  -->
       </p>
 </form>
