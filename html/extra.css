@@ -1,0 +1,25 @@
+.Question{
+  margin: 0px;
+  width: 400px;
+}
+
+.aboutTable{
+    width: 100%;
+    padding: 40px;
+}
+
+.aboutRow{
+
+}
+
+.aboutEntry{
+    width: 500px;
+}
+
+.memeimage{
+    width: 500px;
+}
+
+.aboutName{
+  text-align: center;
+}
