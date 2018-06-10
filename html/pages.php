@@ -4,8 +4,7 @@
 		"Home" => "home.php",
 		"Login" => "login.php",
 		"Sign Up" => "signUp.php",
-		"RandoMeme" => "randomMeme.php",
-		"Find Meme" => "findMyMeme.php",
+		"Find My Meme" => "findMyMeme.php",
 		"List Users" => "listUsers.php",
 		"About" => "about.php");
 

@@ -9,7 +9,7 @@
 		<ul class="tab tab-block" style='position:sticky'>
 			<?php
 				foreach ($content as $page => $location){
-					echo "<li class='tab-item' style='max-width:5%'><a href='$location?user="./*/$user./*/"' ".($page==$currentpage?" class='active'":"").">".$page."</a></li>";
+					echo "<li class='tab-item' style='max-width:8%'><a href='$location?user="./*/$user./*/"' ".($page==$currentpage?" class='active'":"").">".$page."</a></li>";
 				}
 			?>
 
