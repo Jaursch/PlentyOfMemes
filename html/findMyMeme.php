@@ -38,7 +38,7 @@
 						</div>
 					</div>
 					<div class="card-body">
-						<a href="randomMeme.php"><button class="btn btn-primary" id='randomMeme'>Find my meme!</button></a>
+						<a href="randommeme.php"><button class="btn btn-primary" id='randomMeme'>Find my meme!</button></a>
 					</div>
 				</div>
 			</td>
