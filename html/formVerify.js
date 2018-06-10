@@ -55,7 +55,7 @@ window.onload = function(){
 */
     //on submitting the form, "empty" checks are performed on required inputs.
     myForm.onsubmit = function(e){
-		var requiredInputs = document.querySelectorAll(".form-input");
+		var requiredInputs = document.querySelectorAll(".required");
 		for (var i=0; i < requiredInputs.length; i++){
 			console.log(requiredInputs[i]);
 			if( isBlank(requiredInputs[i]) ){

@@ -70,19 +70,19 @@ mysqli_close($conn);
 	<legend>Input credentials:</legend>
     <p>
         <label for="User">Username:</label>
-        <input type="text" class="form-input" name="username" id="username">
+        <input type="text" class="form-input required" name="username" id="username">
 		</p>
   	<p>
         <label for="Email">Email:</label>
-        <input type="text" class="form-input" name="email" id="email">
+        <input type="text" class="form-input required" name="email" id="email">
 		</p>
 		<p>
         <label for="Password">Password:</label>
-        <input type="text" class="form-input" name="password" id="password1">
+        <input type="text" class="form-input required" name="password" id="password1">
 		</p>
 		<p>
         <label for="VerifyPassword">Re-Enter Password:</label>
-        <input type="text" class="form-input" name="verify password" id="password2">
+        <input type="text" class="form-input required" name="verify password" id="password2">
 		</p>
 </fieldset>
 

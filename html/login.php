@@ -78,12 +78,12 @@ mysqli_close($conn);
 	<legend>Login Info:</legend>
     <p>
         <label for="Username">Username:</label>
-        <input type="text" class="form-input" name="username" id="username">
+        <input type="text" class="form-input required" name="username" id="username">
     </p>
 
     <p>
         <label for="Password">Password:</label>
-        <input type="text" class="form-input" name="password" id="password">
+        <input type="text" class="form-input required" name="password" id="password">
 </fieldset>
 
       <p>
