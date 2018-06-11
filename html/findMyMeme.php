@@ -53,7 +53,7 @@
 						</div>
 					</div>
 					<div class="card-body">
-						<button class="btn btn-primary" id='takeQuiz' onclick="location.href='questionnaire.php';">Take the quiz!</button>
+						<button class="btn btn-primary" id='takeQuiz' onclick="location.href='takethequiz.php';">Take the quiz!</button>
 					</div>
 				</div>
 			</td>
