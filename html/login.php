@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<title>MemeMe - Login</title>
-		<link rel="stylesheet" href="spectre.min.css">
+		<?php include "stylesheet.html"; ?>
 		<!-- don't need js? -->
 		<script type = "text/javascript"  src = "formVerify.js" > </script>
 	</head>
@@ -71,7 +71,10 @@
 mysqli_close($conn);
 
 	echo "<section>";
-  echo  "<h2>  $msg </h2>";
+?>
+	<div style="padding: 10px 0px 0px 20px;">
+<?php
+  echo  "<h2 style='margin:0px;'>  $msg </h2>";
 ?>
 <form method="post" id="signUpForm">
 <fieldset>
@@ -91,5 +94,6 @@ mysqli_close($conn);
     <!--    <input type = "reset"  value = "Clear Form" />  -->
       </p>
 </form>
+</div>
 </body>
 </html>
