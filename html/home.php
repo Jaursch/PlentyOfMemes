@@ -7,7 +7,7 @@
 <html>
 	<head>
 		<title>MemeMe Home</title>
-		<link rel="stylesheet" href="spectre.min.css">
+		<?php include "stylesheet.html"; ?>
 	</head>
 
 	<body>
@@ -33,7 +33,7 @@
 
 		// get number of columns in table
 			$fields_num = mysqli_num_fields($result);
-			echo "<h1>Daily Memes:</h1>";
+			echo "<h1 style='padding-left: 20px'>Daily Memes:</h1>";
 			echo "<table class='table'><tr>";
 
 		// printing table headers
@@ -43,7 +43,7 @@
 					if($row = mysqli_fetch_assoc($result)){
 						$url=$row["Image_URL"];
 						$caption=$row["Text"];
-						echo "<td style='max-width:25%'><div style='max-width:25%'><img src='".$url."' alt='Cover' style='width:400%'></div><div>".$caption."</div></td>";
+						echo "<td style='width:25%'><div style='max-width:25%'><img src='".$url."' alt='Cover' style='width:400%'></div><div style='text-align:center;'>".$caption."</div></td>";
 					}
 				}
 				echo "</tr>\n";

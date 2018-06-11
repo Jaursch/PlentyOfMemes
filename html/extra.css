@@ -1,3 +1,12 @@
+.headerTitle{
+  align: center;
+  width: 100%;
+}
+
+.loginInfo{
+  /*padding: 20px;*/
+}
+
 .Question{
   margin: 0px;
   width: 400px;
