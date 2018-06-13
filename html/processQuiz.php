@@ -24,6 +24,11 @@
 		}
 //		print_r($_POST);
 		$selectedAnswer = $answerIDs[array_rand($answerIDs)];// Random element
+		if(!$selectedAnswer){
+			header('Location: takethequiz.php');
+			exit();
+		}
+		
 		$answerQuery = "Select Mood, Style, Humor, Woke, Crazy from Answer WHERE answerID = $selectedAnswer";
 		$answerResult = mysqli_query($conn, $answerQuery);
 		if (!$answerResult) {
@@ -50,7 +55,7 @@
 		
 		// If we didn't get any matches, check a different parameter and answer
 		if(!count($possMemes)){
-			header('Location: processQuiz.php');
+			header('Location: takethequiz.php');
 			exit();
 		}
 		
@@ -65,27 +70,32 @@
 			
 		// Insert matched meme into Questionnaire
 		$QuestionnaireID = -1; // Need it declared in this scope. If we see negative values we'll know something borked
-		$username = $_SESSION["user"];
-		$questionnaireIDQuery = "SELECT COUNT(*) as C FROM (SELECT * FROM Questionnaire WHERE Username = '$username') as A";
-		if($quIDresult = mysqli_query($conn, $questionnaireIDQuery)){
-	 		$resultrow = mysqli_fetch_assoc($quIDresult);
-	 		$QuestionnaireID = $resultrow['C'];
+		if(isset($_SESSION["user"])){
+			$username = $_SESSION["user"];
+			$questionnaireIDQuery = "SELECT COUNT(*) as C FROM (SELECT * FROM Questionnaire WHERE Username = '$username') as A";
+			if($quIDresult = mysqli_query($conn, $questionnaireIDQuery)){
+				$resultrow = mysqli_fetch_assoc($quIDresult);
+				$QuestionnaireID = $resultrow['C'];
 		
-			// Insert username, questionnaireID, memeid, captionid into questionnaire
-	 		$quInsertQuery= "INSERT INTO Questionnaire (Username, MemeID, CaptionID, QuestionnaireID) VALUES ('$username', $MemeID, $CaptionID, $QuestionnaireID)";
-			if(!mysqli_query($conn, $quInsertQuery)){
-				echo "Error: " . $quInsertQuery . "<br>" . mysqli_error($conn);
+				// Insert username, questionnaireID, memeid, captionid into questionnaire
+				$quInsertQuery= "INSERT INTO Questionnaire (Username, MemeID, CaptionID, QuestionnaireID) VALUES ('$username', $MemeID, $CaptionID, $QuestionnaireID)";
+				if(!mysqli_query($conn, $quInsertQuery)){
+					echo "Error: " . $quInsertQuery . "<br>" . mysqli_error($conn);
+				}
 			}
-		}
 			
-		// Insert answers into QuestionList -- MUST COME AFTER QUESTIONNAIRE
-		foreach($answerIDs as $QID => $aID){
-			$quListInsertQuery = "INSERT INTO QuestionList (Username, QID, AnswerID, QuestionnaireID) VALUES ('$username', $QID, $aID, $QuestionnaireID)";
-			if(!mysqli_query($conn, $quListInsertQuery)){
-				echo "Error: " . $quListInsertQuery . "<br>" . mysqli_error($conn);
+			if($QuestionnaireID != -1){
+				// Insert answers into QuestionList -- MUST COME AFTER QUESTIONNAIRE
+				foreach($answerIDs as $QID => $aID){
+					$quListInsertQuery = "INSERT INTO QuestionList (Username, QID, AnswerID, QuestionnaireID) VALUES ('$username', $QID, $aID, $QuestionnaireID)";
+					if(!mysqli_query($conn, $quListInsertQuery)){
+						echo "Error: " . $quListInsertQuery . "<br>" . mysqli_error($conn);
+					}
+				}
 			}
+			mysqli_free_result($quIDresult);
 		}
-			
+		
 		// Display meme
 		$_SESSION["CaptionID"] = $CaptionID;
 		$_SESSION["MemeID"] = $MemeID;
@@ -93,7 +103,6 @@
 		mysqli_free_result($result);
 		mysqli_free_result($answerResult);
 		mysqli_free_result($memeResult);
-		mysqli_free_result($quIDresult);
 		
 		mysqli_close($conn);
 		header('Location: memeDisplay.php', TRUE, 302); // Redirect to the display page
