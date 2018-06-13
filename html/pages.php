@@ -5,7 +5,7 @@
 		"Login" => "login.php",
 		"Sign Up" => "signUp.php",
 		"Find My Meme" => "findMyMeme.php",
-		"List Users" => "listUsers.php",
+		//"List Users" => "listUsers.php",
 		"About" => "about.php",
 		"MyMemes" => "myMemes.php");
 
