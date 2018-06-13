@@ -79,11 +79,11 @@ mysqli_close($conn);
 		</p>
 		<p>
         <label for="Password">Password:</label>
-        <input type="text" class="form-input required" name="password" id="password1">
+        <input type="password" class="form-input required" name="password" id="password1">
 		</p>
 		<p>
         <label for="VerifyPassword">Re-Enter Password:</label>
-        <input type="text" class="form-input required" name="verify password" id="password2">
+        <input type="password" class="form-input required" name="verify password" id="password2">
 		</p>
 </fieldset>
 

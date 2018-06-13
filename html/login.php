@@ -86,7 +86,7 @@ mysqli_close($conn);
 
     <p>
         <label for="Password">Password:</label>
-        <input type="text" class="form-input required" name="password" id="password">
+        <input type="password" class="form-input required" name="password" id="password">
 </fieldset>
 
       <p>
