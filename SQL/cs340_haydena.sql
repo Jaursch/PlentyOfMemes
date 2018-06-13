@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: classmysql.engr.oregonstate.edu:3306
--- Generation Time: Jun 06, 2018 at 02:57 PM
+-- Generation Time: Jun 11, 2018 at 01:04 PM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.0.30
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cs340_forslanm`
+-- Database: `cs340_haydena`
 --
 
 -- --------------------------------------------------------
@@ -44,6 +44,25 @@ CREATE TABLE `Answer` (
 --
 
 INSERT INTO `Answer` (`AnswerID`, `Text`, `QID`, `Mood`, `Style`, `Humor`, `Woke`, `Crazy`) VALUES
+(6, 'Orange', 1, 3, 3, 3, 3, 3),
+(7, 'Red', 1, 3, 3, 3, 3, 3),
+(8, 'Yellow', 1, 3, 3, 3, 3, 3),
+(9, 'Purple', 1, 3, 3, 3, 3, 3),
+(10, 'Pink', 1, 3, 3, 3, 3, 3),
+(11, 'Art', 2, 4, 4, 4, 4, 4),
+(12, 'Liberal Arts', 2, 4, 4, 4, 4, 4),
+(13, 'Math/Science', 2, 4, 4, 4, 4, 4),
+(14, 'Medical', 2, 4, 4, 4, 4, 4),
+(15, 'Engineering', 2, 4, 4, 4, 4, 4),
+(16, 'Psychology/Sociology', 2, 4, 4, 4, 4, 4),
+(17, 'Communications/Media/Journalism', 2, 4, 4, 4, 4, 4),
+(18, 'Oatmeal', 3, 5, 5, 5, 5, 5),
+(19, 'Ew', 3, 5, 5, 5, 5, 5),
+(20, 'Tea', 4, 6, 6, 6, 6, 6),
+(21, 'Beer', 4, 6, 6, 6, 6, 6),
+(22, 'Stones', 5, 7, 7, 7, 7, 7),
+(23, 'Who?', 5, 7, 7, 7, 7, 7),
+(24, 'Coffee', 4, 7, 7, 7, 7, 7),
 (321, 'Green', 1, 3, 4, 5, 6, 2),
 (432, 'Blue', 1, 8, 8, 8, 9, 7),
 (543, 'CS', 2, 2, 2, 2, 2, 2),
@@ -128,7 +147,9 @@ INSERT INTO `Caption` (`CaptionID`, `MemeID`, `Mood`, `Style`, `Humor`, `Woke`, 
 (11, 3, 1, 2, 4, 8, 16, 'I\'ll do the planning, you do the assignment, and you do the report'),
 (12, 4, 1, 2, 3, 6, 7, 'Our ice cream machine is broken'),
 (13, 5, 7, 7, 7, 7, 7, '*walking in front of beaver bus* \"HIT ME\"'),
-(14, 5, 4, 6, 2, 3, 1, 'When a biker cuts you off');
+(14, 5, 4, 6, 2, 3, 1, 'When a biker cuts you off'),
+(15, 6, 7, 9, 2, 3, 1, 'When you win at fortnite by hiding in a bush and watching the other guy fall to his death'),
+(16, 7, 3, 2, 5, 6, 9, 'When mom put the toilet paper backwards');
 
 --
 -- Triggers `Caption`
@@ -198,7 +219,50 @@ INSERT INTO `Meme` (`MemeID`, `Mood`, `Style`, `Humor`, `Woke`, `Crazy`, `Image_
 (2, 5, 8, 6, 8, 4, 'https://i.imgur.com/dLfPsSw.png'),
 (3, 6, 7, 8, 3, 4, 'https://longreadsblog.files.wordpress.com/2016/07/donald-trump-book.jpg?w=1200'),
 (4, 8, 7, 6, 9, 10, 'https://imgflip.com/s/meme/Third-World-Skeptical-Kid.jpg'),
-(5, 4, 8, 7, 6, 3, 'https://pixel.nymag.com/imgs/daily/selectall/2018/04/05/amchop.w710.h473.jpg');
+(5, 4, 8, 7, 6, 3, 'https://pixel.nymag.com/imgs/daily/selectall/2018/04/05/amchop.w710.h473.jpg'),
+(6, 9, 10, 3, 4, 1, 'http://images.indianexpress.com/2016/04/12592250_903691643076358_6115484917659803342_n820.jpg?w=610'),
+(7, 2, 4, 6, 9, 9, 'https://ugc.kn3.net/i/760x/http://camyna.com/wp-content/uploads/2008/11/screenshot08455.jpg'),
+(8, 7, 2, 4, 3, 9, 'http://i.imgur.com/UXCBWlW.gifv'),
+(9, 2, 10, 4, 4, 3, 'https://i.imgur.com/zwK7XG6.gifv'),
+(10, 7, 4, 3, 4, 6, 'http://i.imgur.com/sXw7O0m.gifv'),
+(11, 4, 10, 8, 4, 1, 'https://i.imgur.com/GOlnp5b.gifv'),
+(12, 5, 3, 4, 7, 7, 'https://i.imgur.com/8FkatJH.gifv'),
+(13, 0, 9, 8, 7, 6, 'http://i.imgur.com/Fp05nCu.gifv'),
+(14, 9, 8, 7, 6, 5, 'https://i.imgur.com/skZ8G1Y.gifv'),
+(15, 8, 7, 6, 5, 4, 'http://i.imgur.com/4xxGEiV.gifv'),
+(16, 7, 6, 5, 4, 3, 'http://i.imgur.com/o3Ov5nv.gifv'),
+(17, 6, 5, 4, 3, 2, 'http://i.imgur.com/YtaBVVK.jpg'),
+(18, 5, 4, 3, 2, 1, 'http://i.imgur.com/tT8kkZi.gifv'),
+(19, 9, 7, 5, 3, 1, 'http://i.imgur.com/N2MsuQI.gifv'),
+(20, 0, 2, 4, 6, 8, 'http://i.imgur.com/9izWHLQ.gifv'),
+(21, 8, 9, 0, 1, 2, 'http://i.imgur.com/akHXzkU.gifv'),
+(22, 9, 0, 1, 2, 3, 'https://i.giphy.com/media/l2OtgXv5v2y9iNmfe/giphy.webp'),
+(23, 0, 1, 2, 3, 4, 'http://i.imgur.com/iO4rMlT.gifv'),
+(24, 1, 2, 3, 4, 5, 'http://i.imgur.com/TvY2pxx.gifv'),
+(25, 2, 3, 4, 5, 6, 'http://i.imgur.com/qo4ZnOs.gifv'),
+(26, 3, 4, 5, 6, 7, 'http://i.imgur.com/BHcylFd.gifv'),
+(27, 4, 5, 6, 7, 8, 'http://i.imgur.com/MHuW96t.gifv'),
+(28, 5, 6, 7, 8, 9, 'https://i.redditmedia.com/xakz--WnbO6qzIg_uM1hFDhXhQLLL4yML25b1A6tuTA.jpg?w=478&s=88514cdc1a7fd8f52faf07121345f7ce'),
+(29, 6, 7, 8, 9, 0, 'http://i.imgur.com/jvhnsgd.gifv'),
+(30, 6, 5, 4, 4, 4, 'http://i.imgur.com/iZW7i8F.gifv'),
+(31, 3, 4, 8, 7, 1, 'http://i.imgur.com/rTPRfbi.gifv'),
+(32, 1, 2, 7, 4, 3, 'http://i.imgur.com/iS4iRH7.gifv'),
+(33, 0, 0, 0, 0, 0, 'http://www.dailypics.com/_pics/geese-not-wanted.jpg'),
+(34, 1, 6, 3, 9, 2, 'https://i.chzbgr.com/full/9054872320/h30D401E9/'),
+(35, 5, 6, 7, 3, 2, 'https://i.chzbgr.com/completestore/17/7/17/gPZAipeoEE2uVoP5MyxrPw2.mp4'),
+(36, 3, 4, 7, 3, 2, 'http://i.imgur.com/m42JzMi.gifv'),
+(37, 3, 8, 6, 4, 3, 'https://i.imgur.com/kLqRe4t.gifv'),
+(38, 3, 5, 4, 4, 7, 'https://pbs.twimg.com/media/DLpewDFW0AEQlqK.jpg:large'),
+(39, 2, 5, 3, 3, 1, 'https://i.imgur.com/fpKCfjH.jpg'),
+(40, 1, 3, 1, 8, 1, 'https://i.imgur.com/uDkeUCG.gifv'),
+(41, 8, 5, 2, 9, 6, 'https://i.imgur.com/tyzbHQe.jpg'),
+(42, 3, 1, 9, 7, 5, 'https://i.imgur.com/vfA5QfW.gifv'),
+(43, 5, 9, 3, 7, 5, 'https://78.media.tumblr.com/d8bf2f70bd48b7829252ace64948e8e7/tumblr_p4u7x88dBI1vivyi2o1_540.jpg'),
+(44, 2, 2, 3, 2, 2, 'https://puu.sh/A6Kjh/ed2b153363.gif'),
+(70, 0, 0, 0, 0, 0, 'http://i0.kym-cdn.com/photos/images/original/000/170/791/welcome-to-the-internet-internet-demotivational-poster-1264714433.png.jpg'),
+(71, 0, 0, 0, 0, 0, 'http://i0.kym-cdn.com/photos/images/original/001/107/399/e89.png'),
+(72, 0, 0, 0, 0, 0, 'http://i0.kym-cdn.com/photos/images/original/001/067/233/b80.jpg'),
+(73, 0, 0, 0, 0, 0, 'https://i.imgflip.com/ol9l5.jpg');
 
 --
 -- Triggers `Meme`
@@ -345,10 +409,24 @@ CREATE TABLE `Questionnaire` (
 
 INSERT INTO `Questionnaire` (`username`, `MemeID`, `CaptionID`, `QuestionnaireID`) VALUES
 ('alechayden', 1, 1, 0),
+('BJ', 4, 12, 0),
 ('burtonjaursch', 2, 2, 0),
+('Jeske', 5, 14, 0),
 ('randomuser', 3, 3, 0),
 ('randomuser', 4, 4, 1),
-('randomuser', 5, 5, 2);
+('randomuser', 5, 5, 2),
+('Saltyguy', 5, 13, 0),
+('Saltyguy', 3, 11, 1),
+('Saltyguy', 2, 2, 2),
+('Saltyguy', 2, 2, 3),
+('Saltyguy', 5, 14, 4),
+('Saltyguy', 6, 15, 5),
+('Saltyguy', 2, 8, 6),
+('Saltyguy', 2, 8, 7),
+('Saltyguy', 7, 16, 8),
+('toast', 1, 1, 0),
+('toast', 5, 14, 1),
+('toast', 4, 12, 2);
 
 --
 -- Triggers `Questionnaire`
@@ -464,9 +542,14 @@ CREATE TABLE `User` (
 INSERT INTO `User` (`Username`, `Email`, `Password`) VALUES
 ('alechayden', 'haydena@oregonstate.edu', 'cs340alec'),
 ('benwindheim', 'windheib@oregonstate.edu', 'cs340ben'),
+('BJ', 'bjeez@jobs.com', 'c189e6726d2dc6991d1a2b9c60d341e8'),
 ('burtonjaursch', 'jaurschb@oregonstate.edu', 'cs340burton'),
+('Jeske', 'jes@pancakemaker.com', '3452731f371bf6236d1382da830a6bbf'),
 ('mattforsland', 'forslanm@oregonstate.edu', 'cs340matt'),
-('randomuser', 'gmail@gmail.com', 'uniquepassword');
+('randomuser', 'gmail@gmail.com', 'uniquepassword'),
+('Saltyguy', 'saltyguy@salttube.com', '7519b0d48158a426b7b0efd31c8418eb'),
+('toast', 'test@toast.com', 'cc6f0b491fae5a0b4fdf21abecbc4e18'),
+('User', 'user@name.com', '14c4b06b824ec593239362517f538b29');
 
 --
 -- Triggers `User`
