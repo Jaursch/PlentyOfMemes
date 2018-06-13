@@ -4,7 +4,6 @@
 		include "sessionheader.php";
 		$currentpage="Sign Up";
 		include "pages.php";
-
 ?>
 <html>
 	<head>
