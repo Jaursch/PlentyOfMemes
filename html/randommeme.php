@@ -1,4 +1,5 @@
 <?php
+
 	include 'sessionheader.php';
 
 	$currentpage="FindMyMeme";
@@ -40,6 +41,7 @@
 				}
 			}
 			mysqli_free_result($result2);
+
 		}
 	}
 	
@@ -53,9 +55,13 @@
 ?>
 
 
+<!--
 <html>
 <head></head>
 <body>
 	nerd
 </body>
 </html>
+=======
+</html>
+-->
