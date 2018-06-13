@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<title>Sign Up</title>
-		<link rel="stylesheet" href="spectre.min.css">
+		<?php include "stylesheet.html"; ?>
 		<script type = "text/javascript"  src = "formVerify.js" > </script>
 	</head>
 <body>
@@ -56,6 +56,7 @@ mysqli_close($conn);
 
 ?>
 	<section>
+		<div style="padding: 10px 0px 0px 20px;">
 		<?php
 			if(isset($_SESSION["user"])){
 				$tempuser = $_SESSION["user"];
@@ -77,11 +78,11 @@ mysqli_close($conn);
 		</p>
 		<p>
         <label for="Password">Password:</label>
-        <input type="text" class="form-input required" name="password" id="password1">
+        <input type="password" class="form-input required" name="password" id="password1">
 		</p>
 		<p>
         <label for="VerifyPassword">Re-Enter Password:</label>
-        <input type="text" class="form-input required" name="verify password" id="password2">
+        <input type="password" class="form-input required" name="verify password" id="password2">
 		</p>
 </fieldset>
 
@@ -90,5 +91,6 @@ mysqli_close($conn);
         <input type = "reset"  value = "Clear Form" class = "btn" />
       </p>
 </form>
+</div>
 </body>
 </html>

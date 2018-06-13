@@ -9,7 +9,7 @@
 <html>
 	<head>
 		<title>Meme Finder</title>
-		<link rel="stylesheet" href="spectre.min.css">
+		<?php include "stylesheet.html"; ?>
 	</head>
 
 	<body>
@@ -60,4 +60,3 @@
 		</tr></table>
 	</body>
 </html>
-

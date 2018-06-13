@@ -1,6 +1,6 @@
 <?php  ?>
 	<header>
-		<h1 style="color:#5755d9;">MemeMe - <em>Welcome<?php
+		<h1 style="color:#5755d9; text-align:center;" class="headerTitle">MemeMe - <em>Welcome<?php
 			if(isset($_SESSION["user"]))
 				echo " " . $_SESSION["user"]
 		?>!</em></h1>
@@ -27,7 +27,7 @@
 					//echo "<input type=button onclick='location.href='logout.php';' value='Logout' />";
 				/*/}/*/
 			?>
-			<input type=button onclick="location.href='logout.php';" value='Logout' />
+			<input type=button onclick="location.href='logout.php';" value='Logout' class="btn" style="margin: 0px 10px 0px 20px;"/>
 
 		</div>
 		</ul>
